@@ -15,9 +15,10 @@
   <link href="css/bootstrap-social.css" rel="stylesheet">
   <link href="css/mystyles.css" rel="stylesheet">
 
-
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css" />
   <link rel="stylesheet" type="text/css" href="css/UIsample.css" />
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
   <script type="text/javascript" src="js/UIsample.js"></script>
@@ -80,14 +81,14 @@
   <button type="button" id="removeFirstRow" class="btn btn-success" ng-click="removeFirstRow()">Remove First Row</button>
   <button type="button" id="reset" class="btn btn-success" ng-click="reset()">Reset</button> -->
         
-        <div class="gridStyle" ui-grid="gridOptions" ng-if="users" ></div></div></div></div>
-
+        <div class="gridStyle" ui-grid="gridOptions" ></div></div></div></div>
 <div ng-repeat="user in users">
-  </div>
 
+  </div>
+<br><br><br>
 
 <script src="js/UIsample.js"></script>
- <p style="padding:30px;"></p>
+ <p style="padding:100px;"></p>
 <footer class="row-footer">
     <div class="container">
       <div class="row">
