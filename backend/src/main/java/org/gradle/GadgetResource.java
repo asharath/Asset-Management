@@ -5,24 +5,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/user")
-public class UserResource {
-	//private static Map<Integer, User> DATA = new ConcurrentHashMap<>();
-    //private static AtomicInteger ID_COUNTER = new AtomicInteger();
-	 @PUT
-	 public User insert(User user){
+@Path("/gadget")
+
+public class GadgetResource 
+{
+	@PUT
+	 public Gadget insert(Gadget gadget){
 		 
 		 SqlH2 data = new SqlH2();
 		 data.initializeConnections();
-		 data.createNewTableUser();
-		 data.insertUser(user);
-		 data.retrieveUser(user);
+		 data.createNewTableGadget();
+		 data.insertGadget(gadget);
+		 data.retrieveGadget(gadget);
 		 data.closeConnections();
-		 return user;
+		 return gadget;
 	 }
-	 
-	
 }

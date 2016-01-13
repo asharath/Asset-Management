@@ -1,12 +1,11 @@
 package org.gradle;
 import io.dropwizard.Configuration;
-
 import com.bazaarvoice.dropwizard.assets.AssetsBundleConfiguration;
 import com.bazaarvoice.dropwizard.assets.AssetsConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+
 public class AssetmanagementConfiguration extends Configuration implements AssetsBundleConfiguration{
 	@Valid
     @NotNull
