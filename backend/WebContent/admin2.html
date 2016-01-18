@@ -1,0 +1,175 @@
+<html ng-app="myApp">
+<head lang="en">
+  <title>Getting Started With ngGrid Example</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head
+       content must come *after* these tags -->
+  <title>Asset Management</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap-social.css" rel="stylesheet">
+  <link href="css/mystyles.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/login.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/ng-grid.css" />
+  <link rel="stylesheet" type="text/css" href="css/UIsample.css" />
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/ng-grid-2.0.14.min.js"></script>
+  <script type="text/javascript" src="js/UIsample.js"></script>
+  <script type="text/javascript" src="js/submit.js"></script>
+
+</head>
+
+<body ng-controller="MyCtrl">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" style="background-color: white; width:140px; height:50px"><img src="soft.png" width="120px" height="40px" align="middle" ></a>    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class = "active"><a href="index.html "><span class="glyphicon glyphicon-home"
+                                                                                                aria-hidden="true"></span> Home</a></li>
+       
+
+      
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"
+                                                                               aria-hidden="true"></span> Log Out</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<header class = "jumbotron">
+
+  <!-- Main component for a primary marketing message or call to action -->
+
+  <div class = "container">
+    <div class = "row row-header">
+      <div  class = "col-xs-12 col-sm-8">
+        <h1>Asset Management</h1>
+        <p style="padding:10px;"></p>
+        <p>The Asset Management monitors and maintains things of value to an entity or group. A systematic process of deploying, operating, maintaining, upgrading, and disposing of assets cost-effectively.</p>
+        <div class = "col-xs col-sm-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class = container>
+
+  <ol class = "breadcrumb">
+    <li class = "active"><a href = "home2.html">Home</a></li>
+    <li><a href = "admin2.html">Admin</a></li>
+  </ol>
+
+  <p style="padding:10px;"></p>
+
+
+<section>
+ <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">First Name:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="fName"  placeholder="First Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Last Name:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="lName" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Age:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="fName"  placeholder="Age">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Employee Id:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="fName"  placeholder="Employee id">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">E-mail Id:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="fName"  placeholder="E-mail id">
+          </div>
+        </div>
+
+
+      </form>
+  <p style="padding:40px;"></p>
+
+      <hr>
+      
+      
+
+      <button class="btn btn-success" ng-disabled="error || incomplete">
+        <span class="glyphicon glyphicon-save"></span>  ADD
+      </button>
+</section>
+  </div>
+<p style="padding:60px;"></p>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="row-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+          <h5>Links</h5>
+          <ul class = "list-unstyled">
+            <li><a href="home2.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-5">
+          <address>
+            Softhouse Consulting<br>
+            Campus Gräsvik 3A<br>
+            371 75 Karlskrona<br>
+            <br>
+            <i class="fa fa-phone"></i>: +46 455 61 87 00<br>
+            <i class="fa fa-envelope">: </i> info.karlskrona@softhouse.se <a href="mailto:info.karlskrona@softhouse.se"></a>
+
+          </address>
+          <div class="col-xs-12">
+            <p style="padding:10px;"></p>
+            <p align=center>© Copyright 2015 Asset Management</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
