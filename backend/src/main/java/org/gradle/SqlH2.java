@@ -82,11 +82,12 @@ public class SqlH2 {
 				String sql = "CREATE TABLE IF NOT EXISTS GADGET "
 						+ "(gadget_id INT NOT NULL auto_increment,"
 						+ "gadget_name VARCHAR(255) NOT NULL,"
-						+ "model_type VARCHAR(255) NOT NULL,"
+						+ "model_name VARCHAR(255) NOT NULL,"
 						+ "serial_number VARCHAR(255) NOT NULL,"
 						+ "purchase_date VARCHAR(255) NOT NULL,"
 						+ "purchase_date VARCHAR(255) NOT NULL,"
 						+ "warranty_date VARCHAR(255) NOT NULL,"
+						+ "status VARCHAR(255) NOT NULL,"
 						+ "additional_info VARCHAR(511) NOT NULL,"
 						+ "PRIMARY KEY (gadget_id)) AUTO_INCREMENT=1";
 				statement.executeUpdate(sql);
@@ -114,6 +115,29 @@ public class SqlH2 {
 				se.printStackTrace();
 			}
 		}
+		
+		public void createNewTableAssignemnt()
+		{
+			try {
+				// Execute a query
+				System.out.println("Creating Assignemnt table in given database...");
+				statement = connection.createStatement();
+				
+				String sql = "CREATE TABLE IF NOT EXISTS ASSIGNMENT "
+						+ "(assignment_id INT NOT NULL auto_increment,"
+						+ "gadget_name VARCHAR(255) NOT NULL,"
+						+ "model_name VARCHAR(255) NOT NULL,"
+						+ "status VARCHAR(255) NOT NULL,"
+						+ "additional_info VARCHAR(511) NOT NULL,"
+						+ "PRIMARY KEY (assignment_id)) AUTO_INCREMENT=1";
+				statement.executeUpdate(sql);
+				System.out.println("Created table in given database...");
+			} catch (SQLException se) {
+				// Handle errors for JDBC
+				se.printStackTrace();
+			}
+		}
+		
 		public void insertUser(User user) {
 			
 			  try {
@@ -142,7 +166,8 @@ public class SqlH2 {
 		          e.printStackTrace();
 		      }
 		}
-				public void insertGadget(Gadget gadget) {
+	
+		public void insertGadget(Gadget gadget) {
 					
 					  try {
 				          //STEP 4: Execute a query
@@ -150,12 +175,12 @@ public class SqlH2 {
 				          statement = connection.createStatement();
 
 				          String sql = "INSERT INTO GADGET "
-				          		+ "(gadget_id,gadget_name,model_type,serial_number,purchase_date,warranty_date,additional_info)"
+				          		+ "(gadget_id,gadget_name,model_name,serial_number,purchase_date,warranty_date,additional_info)"
 				          		+ "VALUES (" + "'" + gadget.getGadgetid() +"'"
 				          		+ ", " + "'" + gadget.getGadgetname() +"'"
 				          		+ ", " + "'" + gadget.getModeltype() + "'"
 				          		+ ", " + "'" + gadget.getSerialnumber() + "'"
-				          		+ ", " + "'" + gadget.getPurchasedate() + "'" + "," + "'" + gadget.getWarrantydate() + "'"+ ", " + "'" + gadget.getAdditionalinfo() + "'" 
+				          		+ ", " + "'" + gadget.getPurchasedate() + "'" + "," + "'" + gadget.getWarrantydate() + "'"+ ", " +"'" + gadget.status + "'" + "'" + gadget.getAdditionalinfo() + "'" 
 						         + ")";
 
 				          statement.executeUpdate(sql);
@@ -171,7 +196,7 @@ public class SqlH2 {
 				      }
 				}
 				
-				public void insertModel(Model model) {
+		public void insertModel(Model model) {
 					
 					  try {
 				          //STEP 4: Execute a query
@@ -196,6 +221,36 @@ public class SqlH2 {
 				          e.printStackTrace();
 				      }
 				}	
+		
+		public void insertAssigmennt(Assignment assignment)
+		{
+
+			  try {
+		          //STEP 4: Execute a query
+		          System.out.println("Inserting records into the table...");
+		          statement = connection.createStatement();
+
+		          String sql = "INSERT INTO ASSIGNMENT "
+		          		+ "(assignemnt_id,gadget_name,model_name,status,additional_info)"
+		          		+ "VALUES (" + "'" + assignment.getAssignmentId() +"'"
+		          		+ ", " + "'" + assignment.getGadgetname() +"'"
+		          		+ ", " + "'" + assignment.getModel_name() + "'"
+		          		+ ", " + "'" + assignment.getStaus() + "'"
+		          		+ ", " + "'" + assignment.getadditional_info() + "'" + ")";
+
+		          statement.executeUpdate(sql);
+
+		          System.out.println("Inserted records into the table...");
+
+		      } catch (SQLException se) {
+		          //Handle errors for JDBC
+		          se.printStackTrace();
+		      } catch (Exception e) {
+		          //Handle errors for Class.forName
+		          e.printStackTrace();
+		      }
+		}
+		
 		public void retrieveUser(User user) {
 			
 			  try {
@@ -261,6 +316,7 @@ public class SqlH2 {
 		          e.printStackTrace();
 		      }
 		}
+		
 		public void retrieveModel(Model model) {
 			
 			  try {
@@ -294,4 +350,36 @@ public class SqlH2 {
 		      }
 		}
 		
+		public void retrieveAssignment(Assignment assignment)
+		{
+			try {
+		          //STEP 4: Execute a query
+		          statement = connection.createStatement();
+
+		          String sql = "SELECT * FROM ASSIGNMENT";
+
+		          statement.executeQuery(sql);
+		          ResultSet rs=statement.executeQuery(sql);
+		          ResultSetMetaData rsmd = rs.getMetaData();
+		          System.out.println("");
+		      
+		          int numberOfColumns = rsmd.getColumnCount();
+
+		          while (rs.next()) {
+		              for (int i = 1; i <= numberOfColumns; i++) {
+		                if (i > 1) System.out.print(",  ");
+		                String columnValue = rs.getString(i);
+		                System.out.print(columnValue);
+		              }
+		              System.out.println("");  
+		          System.out.println("Retrieved records from the table...");
+		          }
+		      } catch (SQLException se) {
+		          //Handle errors for JDBC
+		          se.printStackTrace();
+		      } catch (Exception e) {
+		          //Handle errors for Class.forName
+		          e.printStackTrace();
+		      }
+		}
 		}
