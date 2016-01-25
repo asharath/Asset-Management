@@ -2,25 +2,27 @@ package org.gradle;
 
 public class Model 
 {
-	public String model_name;
-	public String model_id;
+	public String modelname;
+	public int mid;
 	
-	public String getModel_name()
+	public String getModelname()
 	{
-		return model_name;
+		return modelname;
 	}
-	public void setModel_name(String model_name)
+	public void setModelname(String modelname)
 	{
-		this.model_name=model_name;
+		this.modelname=modelname;
 	}
-	public String getModel_id()
+	
+	public int getMid()
 	{
-	return model_id;	
+	return mid;	
 	}
-	public void setModel_id(String model_id)
+	public void setMid(int mid)
 	{
-		this.model_id=model_id;
+		this.mid=mid;
 	}
 
+	
 }
 

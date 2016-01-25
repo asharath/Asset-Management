@@ -1,5 +1,5 @@
-<html ng-app="myApp">
-<head lang="en">
+<html ng-app="myApp" ng-controller="MyCtrl">
+<head>
   <title>Getting Started With ngGrid Example</title>
 
   <meta charset="utf-8">
@@ -19,19 +19,17 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/login.css" />
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/UIsample.css" />
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
+  <script type="text/javascript" src="js/UIsample.js"></script>
   <script type="text/javascript" src="js/submit.js"></script>
-      <script type="text/javascript" src="js/UIsample.js"></script>
-
-    
-
 
 </head>
 
-<body ng-controller="MyCtrl">
+<body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -46,15 +44,18 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class = "active"><a href="home2.html "><span class="glyphicon glyphicon-home"
-                                                                               aria-hidden="true"></span> Home</a></li>
+                                                                                                aria-hidden="true"></span> Home</a></li>
         <li><a href="info.html">
           <span class="glyphicon glyphicon-info-sign" aria-hidden="true">                            </span>Employee Info</a></li>
 
-</ul>
-
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home2.html "><span class="glyphicon glyphicon-log-out"
+                                                                               aria-hidden="true"></span> Log Out</a></li>
+      </ul>
     </div>
 
-    </div>
+  </div>
 </nav>
 
 <header class = "jumbotron">
@@ -67,74 +68,71 @@
         <h1>Asset Management</h1>
         <p style="padding:10px;"></p>
         <p>The Asset Management monitors and maintains things of value to an entity or group. A systematic process of deploying, operating, maintaining, upgrading, and disposing of assets cost-effectively.</p>
-      <div class = "col-xs col-sm-4">
+        <div class = "col-xs col-sm-4">
+        </div>
       </div>
     </div>
   </div>
-    </div>
 </header>
 
 <div class = container>
 
   <ol class = "breadcrumb">
     <li class = "active"><a href = "home2.html">Home</a></li>
-    <li><a href = "info.html">Employee Info</a></li>
+    <li><a href = "admin2.html">Employee</a></li>
+     <li><a href = "gadgt.html">Gadget</a></li>
+     <li><a href = "mod.html">Model</a></li>
   </ol>
 
-          <p style="padding:10px;"></p>
-
-  <div class="row">
-    <div class="col-md-offset-5 col-md-3">
-           <div class="form-login">
-                        <h4>Welcome back.</h4>
-                  <form name="myForm" method="post" onsubmit="submitfunc()">
-                        <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-                        </br>
-                        <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-                        </br>
-                   
-		<button class="btn btn-success" ng-disabled="error ||  incomplete" ng-click="submit">
-        <span class="glyphicon glyphicon-submit"></span>SUBMIT
-      </button>
-</form>
-                    </div>
-                  </div>
-                </div>
-  </div>
-<
+  <p style="padding:10px;"></p>
 
 
-<p style="padding:20px;"></p>
+<section>
+ 
 
-                <footer class="row-footer">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
-                <h5>Links</h5>
-                <ul class = "list-unstyled">
-                  <li><a href="home2.html">Home</a></li>
-                  <li><a href="info.html">Info</a></li>
-                </ul>
-              </div>
-              <div class="col-xs-6 col-sm-5">
-                <h5>Our Address</h5>
-                <address>
-                  Campus Gräsvik 3 A,<br>
-                  371 75 Karlskrona <br>
-                  0455-61 87 00<br>
-                  <i class="fa fa-phone"></i>: +852 1234 5678<br>
-                  <i class="fa fa-fax"></i>: +852 8765 4321<br>
-                  <i class="fa fa-envelope"></i>:
-                  <a href="mailto:"></a>
+</section>
+  </div> 
+<p style="padding:40px;"></p>
 
-                </address>
-                <div class="col-xs-12">
-                  <p style="padding:10px;"></p>
-                  <p align=center>© Copyright 2015 Asset Management</p>
-                </div>
-              </div>
-              </div>
-            </div>
-          </footer>
- </body>
+
+
+
+
+
+
+
+
+
+
+  <footer class="row-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+          <h5>Links</h5>
+          <ul class = "list-unstyled">
+            <li><a href="home2.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-5">
+          <h5>Our Address</h5>
+          <address>
+            Campus Gräsvik 3 A,<br>
+            371 75 Karlskrona <br>
+            0455-61 87 00<br>
+            <i class="fa fa-phone"></i>: +852 1234 5678<br>
+            <i class="fa fa-fax"></i>: +852 8765 4321<br>
+            <i class="fa fa-envelope"></i>:
+            <a href="mailto:"></a>
+
+          </address>
+          <div class="col-xs-12">
+            <p style="padding:10px;"></p>
+            <p align=center>© Copyright 2015 Asset Management</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>

@@ -79,8 +79,7 @@
 
   <ol class = "breadcrumb">
     <li class = "active"><a href = "home2.html">Home</a></li>
-    <li><a href = "info.html">Employee Info</a></li>
-     <li><a href = "gadgt.html">Gadget</a></li>
+    <li><a href = "info.html">Employee Info</a></li>    
   </ol>
 
   <p style="padding:10px;"></p>
@@ -88,49 +87,70 @@
 
 <section>
  <form class="form-horizontal">
-<div ng-repeat="user in users">{{user.eid}} {{user.ename}} {{user.email}} {{user.age}} {{user.sex}}</div>
+<div ng-repeat="gadget in gadgets"> {{gadget.gid}} {{gadget.gname}} {{gadget.modelname}} {{gadget.serialnumber}} {{gadget.purchasedate}} {{gadget.warrantydate}} {{gadget.status}} {{gadget.additionalinfo}}</div>
         <div class="form-group" >
-          <label class="col-sm-2 control-label">Employee ID:</label>
+          <label class="col-sm-2 control-label">Gadget ID:</label>
           <div class="col-sm-10">
-            <input type="text" ng-model="user.eid"  placeholder="Employee ID">
+            <input type="text" ng-model="gadget.gid"  placeholder="Gadget ID">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Employee Name:</label>
+          <label class="col-sm-2 control-label">Gadget Name:</label>
           <div class="col-sm-10">
-            <input type="text" ng-model="user.ename" placeholder="Employee Name">
+            <input type="text" ng-model="gadget.gname" placeholder="Gadget Name">
           </div>
         </div>
   <div class="form-group">
-          <label class="col-sm-2 control-label">E-mail Id:</label>
+          <label class="col-sm-2 control-label">Model Type:</label>
           <div class="col-sm-10">
-            <input type="text" ng-model="user.email"  placeholder="E-mail id">
+            <input type="text" ng-model="gadget.modelname"  placeholder="Model Type">
           </div>
         </div>
+        
         <div class="form-group">
-          <label class="col-sm-2 control-label">Age:</label>
+          <label class="col-sm-2 control-label">Serial Number:</label>
           <div class="col-sm-10">
-            <input type="text" ng-model="user.age"  placeholder="Age">
+            <input type="text" ng-model="gadget.serialnumber"  placeholder="Serial Number">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Date of Purchase:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="gadget.purchasedate"  placeholder="Date of Purchase">
           </div>
         </div>
 
 
 <div class="form-group">
-          <label class="col-sm-2 control-label">Sex:</label>
+          <label class="col-sm-2 control-label">Date of Expiry:</label>
           <div class="col-sm-10">
-            <input type="text" ng-model="user.sex"  placeholder="Sex">
+            <input type="text" ng-model="gadget.warrantydate"  placeholder="Date of Expiry">
           </div>
         </div>
 
+<div class="form-group">
+          <label class="col-sm-2 control-label">Status:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="gadget.status"  placeholder="Status">
+          </div>
+        </div>
+        
+<div class="form-group">
+          <label class="col-sm-2 control-label">Additonal Info:</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="gadget.additionalinfo"  placeholder="Additional Info">
+          </div>
+        </div>
       </form>
 
       <hr>
-      <a class="btn btn-success" ng-click="addUser(user)">
+      <a class="btn btn-success" ng-click="addGadget(gadget)">
        ADD
       </a>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  		<script src="js/user.js"></script>
+  		<script src="js/gadget.js"></script>
 </section>
   </div> 
 <p style="padding:40px;"></p>
