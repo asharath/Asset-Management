@@ -3,14 +3,14 @@ angular.module('myApp', [])
 
         $scope.addUser = function(user) {
             $http.put('/api/user', user).then(function(response) {
-	    //refreshAllUsers();
+	    refreshAllUsers();
 	    alert("New employee added!");
 	    window.location.assign("../admin2.html")            
 	});
         }
-        //function refreshAllUsers() {
-          // $http.get('/api/user').then(function(response) {
-            //    $scope.users = response.data;
-          // });
-        //}
+        function refreshAllUsers() {
+           $http.get('/api/user').then(function(response) {
+                $scope.users = response.data;
+           });
+        }
     });

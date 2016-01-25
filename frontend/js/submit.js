@@ -10,7 +10,7 @@ function submitfunc()
     if (x=="admin" && y== "admin")
     {
       alert("You are now logged in! Redirecting to the Admin page");
-        window.location = "admin2.html";
+        window.location = "index2.html";
     }
     else {
       alert("Username or password is incorrect");
